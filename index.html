@@ -1,0 +1,141 @@
+<!-- Copyright © 2024 Parsa Farahani -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Livestream & Recording media" >
+    <meta name="keywords" content="livestream, record, media" >
+    <meta name="author" content="Parsa.f" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestream & Recording Media</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+
+    <noscript  >Your Browser dosen't support Javascript or it is disabled for this website.</noscript>
+    <main>
+        <div class="page-bg">
+            <div class="page-bg__shape page-bg__shape-1"></div>
+            <div class="page-bg__shape page-bg__shape-2"></div>
+            <div class="page-bg__shape page-bg__shape-3"></div>
+            <div class="page-bg__shape page-bg__shape-4"></div>
+        </div>
+        <div class="media-cont">
+            <div class="top-cont" >
+                <aside class="media-cont-sidebar" >
+                    <ul class="media-cont-sidebar-list" >
+                        <li class="media-cont-sidebar-item" >
+                            <div id="startend-btn" class="media-cont-sidebar-link" data-disabled="false" >
+                                <svg id="startend-icon" class="media-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6.343 4.938a1 1 0 0 1 0 1.415a8.003 8.003 0 0 0 0 11.317a1 1 0 1 1-1.414 1.414c-3.907-3.906-3.907-10.24 0-14.146a1 1 0 0 1 1.414 0m12.732 0c3.906 3.907 3.906 10.24 0 14.146a1 1 0 0 1-1.415-1.414a8.003 8.003 0 0 0 0-11.317a1 1 0 0 1 1.415-1.415M9.31 7.812a1 1 0 0 1 0 1.414a3.92 3.92 0 0 0 0 5.544a1 1 0 1 1-1.415 1.414a5.92 5.92 0 0 1 0-8.372a1 1 0 0 1 1.415 0m6.958 0a5.92 5.92 0 0 1 0 8.372a1 1 0 0 1-1.414-1.414a3.92 3.92 0 0 0 0-5.544a1 1 0 0 1 1.414-1.414m-4.186 2.77a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3"/></svg>
+                            </div>
+                        </li>
+                        <li class="media-cont-sidebar-item" >
+                            <div id="mic-btn" class="media-cont-sidebar-link" data-disabled="true" >
+                                <svg id="mic-icon" class="media-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0V8a6 6 0 0 0-6-6M7 15a1 1 0 0 1 1 1a8 8 0 1 0 16 0a1 1 0 1 1 2 0c0 5.186-3.947 9.45-9.001 9.95L17 26v3a1 1 0 1 1-2 0v-3l.001-.05C9.947 25.45 6 21.187 6 16a1 1 0 0 1 1-1"/></svg>
+                            </div>
+                        </li>
+                        <li class="media-cont-sidebar-item" >
+                            <div id="rec-btn" class="media-cont-sidebar-link" data-disabled="true" >
+                                <svg id="rec-icon" class="media-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><g fill="currentColor"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88"/><circle cx="128" cy="128" r="72"/></g></svg>
+                            </div>
+                        </li>
+                        <li class="media-cont-sidebar-item" >
+                            <a id="download-btn" class="media-cont-sidebar-link" data-disabled="true" >
+                                <svg id="download-icon" class="media-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M11.78 7.159a.75.75 0 0 0-1.06 0l-1.97 1.97V1.75a.75.75 0 0 0-1.5 0v7.379l-1.97-1.97a.75.75 0 0 0-1.06 1.06l3.25 3.25L8 12l.53-.53l3.25-3.25a.75.75 0 0 0 0-1.061M2.5 9.75a.75.75 0 0 0-1.5 0V13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9.75a.75.75 0 0 0-1.5 0V13a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5z" clip-rule="evenodd"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <button id="media-cont-sidebar-openning-btn" >&rsaquo;</button>
+                </aside>
+                <video id="video" controls autoplay></video>
+                <audio id="audio" autoplay ></audio>
+            </div>    
+            <hr class="media-cont-divider" >
+            <div class="bottom-cont" >
+                <div class="bottom-cont-left">
+                    
+                </div>
+                <div class="bottom-cont-center" >
+                    <progress id="progress" max="100" value="100" ></progress>
+                    <div class="bottom-playback-controls">
+                        <div id="fs-btn" class="bottom-playback-btn">
+                            <svg id="fs-icon" class="media-icon bottom-playback-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M5 5h5V3H3v7h2zm5 14H5v-5H3v7h7zm11-5h-2v5h-5v2h7zm-2-4h2V3h-7v2h5z"/></svg>
+                        </div>
+                        <div id="hq-btn" class="bottom-playback-btn">
+                            <svg id="hq-icon" class="media-icon bottom-playback-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M14.75 16.5h1.5V15H17q.425 0 .713-.288T18 14v-4q0-.425-.288-.712T17 9h-3q-.425 0-.712.288T13 10v4q0 .425.288.713T14 15h.75zM6 15h1.5v-2h2v2H11V9H9.5v2.5h-2V9H6zm8.5-1.5v-3h2v3zM4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20z"/></svg>
+                            <div id="hq-options-cont" >
+                                <ul id="hq-options-list" >
+                                    <li id="hq-720-item" class="hq-options-item" >
+                                        <span id="hq-720-btn" class="hq-options-btn" >720p</span>
+                                        <input type="radio" name="hq-check" id="hq-720-check">
+                                    </li>
+                                    <li id="hq-480-item" class="hq-options-item" >
+                                        <span id="hq-480-btn" class="hq-options-btn" >480p</span>
+                                        <input type="radio" name="hq-check" id="hq-480-check">
+                                    </li>
+                                    <li id="hq-144-item" class="hq-options-item" >
+                                        <span id="hq-144-btn" class="hq-options-btn" >144p</span>
+                                        <input type="radio" name="hq-check" id="hq-144-check">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="mute-btn" class="bottom-playback-btn" >
+                            <svg id="mute-icon" class="media-icon bottom-playback-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M416 432L64 80"/><path fill="currentColor" d="M243.33 98.86a23.89 23.89 0 0 0-25.55 1.82l-.66.51l-28.52 23.35a8 8 0 0 0-.59 11.85l54.33 54.33a8 8 0 0 0 13.66-5.66v-64.49a24.51 24.51 0 0 0-12.67-21.71m8 236.43L96.69 180.69A16 16 0 0 0 85.38 176H56a24 24 0 0 0-24 24v112a24 24 0 0 0 24 24h69.76l92 75.31a23.9 23.9 0 0 0 25.87 1.69A24.51 24.51 0 0 0 256 391.45v-44.86a16 16 0 0 0-4.67-11.3M352 256c0-24.56-5.81-47.87-17.75-71.27a16 16 0 1 0-28.5 14.55C315.34 218.06 320 236.62 320 256q0 4-.31 8.13a8 8 0 0 0 2.32 6.25l14.36 14.36a8 8 0 0 0 13.55-4.31A146 146 0 0 0 352 256m64 0c0-51.18-13.08-83.89-34.18-120.06a16 16 0 0 0-27.64 16.12C373.07 184.44 384 211.83 384 256c0 23.83-3.29 42.88-9.37 60.65a8 8 0 0 0 1.9 8.26L389 337.4a8 8 0 0 0 13.13-2.79C411 311.76 416 287.26 416 256"/><path fill="currentColor" d="M480 256c0-74.25-20.19-121.11-50.51-168.61a16 16 0 1 0-27 17.22C429.82 147.38 448 189.5 448 256c0 46.19-8.43 80.27-22.43 110.53a8 8 0 0 0 1.59 9l11.92 11.92a8 8 0 0 0 12.92-2.16C471.6 344.9 480 305 480 256"/></svg>
+                            <div class="video-volume-range-cont" >
+                                <input type="range" name="video-volume" id="video-volume-range" min="0" value="1" step=".1" >
+                            </div>
+                        </div>
+                        <div id="playpause-btn" class="media-cont-sidebar-link" data-disabled="true">
+                            <svg id="playpause-icon" class="media-icon bottom-playback-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6c0-1.886 0-2.828.586-3.414C3.172 2 4.114 2 6 2c1.886 0 2.828 0 3.414.586C10 3.172 10 4.114 10 6v12c0 1.886 0 2.828-.586 3.414C8.828 22 7.886 22 6 22c-1.886 0-2.828 0-3.414-.586C2 20.828 2 19.886 2 18zm12 0c0-1.886 0-2.828.586-3.414C15.172 2 16.114 2 18 2c1.886 0 2.828 0 3.414.586C22 3.172 22 4.114 22 6v12c0 1.886 0 2.828-.586 3.414C20.828 22 19.886 22 18 22c-1.886 0-2.828 0-3.414-.586C14 20.828 14 19.886 14 18z"/></svg>
+                        </div>
+                    </div>
+                    <span id="video-time" >00:00:00</span>
+                </div>
+                <div class="bottom-cont-right">
+                    <svg id="live-icon" class="media-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.467 4.392a.75.75 0 0 1-.001 1.06A9.219 9.219 0 0 0 2.75 12a9.22 9.22 0 0 0 2.775 6.606a.75.75 0 1 1-1.05 1.071A10.72 10.72 0 0 1 1.25 12c0-2.972 1.207-5.664 3.156-7.609a.75.75 0 0 1 1.06.001m13.15.072a.75.75 0 0 1 1.06.011A10.718 10.718 0 0 1 22.75 12c0 2.964-1.2 5.65-3.141 7.594a.75.75 0 1 1-1.062-1.06A9.219 9.219 0 0 0 21.25 12a9.218 9.218 0 0 0-2.644-6.475a.75.75 0 0 1 .01-1.06M8.308 7.488a.75.75 0 0 1-.035 1.06c-.949.888-1.524 2.102-1.524 3.434c0 1.348.589 2.575 1.558 3.466a.75.75 0 1 1-1.016 1.104c-1.252-1.151-2.042-2.77-2.042-4.57c0-1.779.771-3.38 2-4.53a.75.75 0 0 1 1.06.036m7.434.038a.75.75 0 0 1 1.06-.024c1.197 1.145 1.947 2.727 1.947 4.48c0 1.775-.767 3.373-1.99 4.521a.75.75 0 1 1-1.027-1.093c.945-.887 1.517-2.1 1.517-3.428c0-1.313-.559-2.512-1.484-3.396a.75.75 0 0 1-.023-1.06" clip-rule="evenodd"/><path fill="currentColor" d="M13.656 10.451c.896.658 1.344.987 1.344 1.55c0 .562-.448.89-1.344 1.548a12.83 12.83 0 0 1-.718.495c-.197.125-.421.254-.653.381c-.894.49-1.34.734-1.741.463c-.401-.27-.437-.838-.51-1.971c-.02-.32-.034-.635-.034-.917c0-.282.013-.596.034-.917c.072-1.133.109-1.7.51-1.97c.4-.271.847-.027 1.74.462c.233.127.457.256.654.381c.226.143.471.314.718.495"/></svg>
+                </div>
+            </div>    
+            <span class="network-speed-cont">
+                <span id="network-speed" >1.5 Mbps</span>
+                <span >
+                    <svg id="network-speed-icon" class="media-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2.1 11.1L0 9q2.3-2.35 5.375-3.675T12 4q.6 0 1.2.037t1.2.113l-1.5 2.9Q12.6 7 12.412 7H12Q9.1 7 6.563 8.088T2.1 11.1m4.25 4.25l-2.1-2.15q1.4-1.4 3.213-2.212t3.937-.938L9.8 13.3q-.975.3-1.85.813t-1.6 1.237m4.95 4.5q-.75-.275-1.162-1.037T10.1 17.3l6-12.2q.1-.2.288-.262t.412.012q.2.075.3.25t.05.4L13.9 18.65q-.2.825-1 1.163t-1.6.037m6.35-4.5q-.15-.15-.325-.3t-.375-.3l.8-3.15q.525.375 1.038.763t.962.837zm4.25-4.25q-.75-.75-1.612-1.375T18.45 8.6l.7-3q1.35.65 2.575 1.5T24 9z"/></svg>
+                </span>
+            </span>
+            <div class="media-cont-bg">
+    
+            </div>
+        </div>
+    
+    
+        <!-- cam/mic Premisssions -->
+        <div id="premission-modal-cont">
+            <form id="premisssion-modal" class="animate__animated animate__fadeIn">
+                <p id="premission-title" >Please enable neccessary premissions to continue</p>
+                <hr id="premission-modal-divider" >
+                <div class="premission-option-cont">
+                    <input type="checkbox" name="webcam-prem" id="webcam-premission-check" class="premission-check">
+                    <label class="premission-label" for="webcam-premission-check" >
+                        <span class="premisssion-icon-cont" >
+                            <svg class="media-icon premission-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M168 104a40 40 0 1 0-40 40a40 40 0 0 0 40-40m-56 0a16 16 0 1 1 16 16a16 16 0 0 1-16-16m112 92h-84v-8.87a84 84 0 1 0-24 0V196H32a12 12 0 0 0 0 24h192a12 12 0 0 0 0-24M68 104a60 60 0 1 1 60 60a60.07 60.07 0 0 1-60-60"/></svg>
+                        </span>
+                    </label>
+                    <input type="checkbox" name="mic-prem" id="mic-premission-check" class="premission-check">
+                    <label class="premission-label" for="mic-premission-check" >
+                        <span class="premisssion-icon-cont" >
+                            <svg class="media-icon premission-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0V8a6 6 0 0 0-6-6M7 15a1 1 0 0 1 1 1a8 8 0 1 0 16 0a1 1 0 1 1 2 0c0 5.186-3.947 9.45-9.001 9.95L17 26v3a1 1 0 1 1-2 0v-3l.001-.05C9.947 25.45 6 21.187 6 16a1 1 0 0 1 1-1"/></svg>
+                        </span>
+                    </label>
+                </div>
+                <button type="button" id="premission-submit-btn">
+                    Start
+                </button>
+            </form>
+        </div>
+        <!-- End cam/mic Premisssions -->
+    </main>
+
+    <script src="index.js" ></script>
+</body>
+</html>
