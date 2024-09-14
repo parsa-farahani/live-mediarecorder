@@ -10,6 +10,7 @@
 
 .media-icon {
   width: 20px;
+  height: 20px;
 }
 
 *, *::before, *::after {
@@ -23,6 +24,8 @@ html, body {
 
 body {
   position: relative;
+  height: 100svh;
+  overflow: clip;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   background: rgb(20, 20, 20);
@@ -38,15 +41,40 @@ noscript {
   text-align: center;
 }
 
+[data-activable] {
+
+  .active-icon {
+    display: none;
+  }
+  
+  .inactive-icon {
+    display: inline-block;
+  }
+}
+
+[data-activable].active {
+  .active-icon {
+    display: inline-block;
+  }
+  .inactive-icon {
+    display: none;
+  }
+}
+
 main {
+  height: 100svh;
   padding-top: 60px;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 0;
+  }
 }
 
 /* page background */
 .page-bg {
   position: absolute;
   inset: 0;
-  height: 100vh;
+  height: 100svh;
   filter: blur(20px);
   overflow: hidden;
 }
@@ -102,6 +130,12 @@ main {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.726);
+
+  @media screen and (max-width: 768px) {
+    height: 100svh;
+    border-radius: 0;
+    border: 0;
+  }
 }
 
 .network-speed-cont {
@@ -109,7 +143,7 @@ main {
   top: 0;
   right: 0;
   /* border: 1px solid grey; */
-  padding: 5px 5px 0 0;
+  padding: 0px 5px 0 0;
   display: flex;
   align-items: center;
   font-size: 0.55rem;
@@ -144,8 +178,9 @@ main {
 
 .media-cont-sidebar {
   position: relative;
-  width: var(--media-cont-left);
+  width: 0;
   flex-shrink: 0;
+  width: var(--media-cont-left);  
   height: 100%;
   padding: 20px 0;
   border-top-left-radius: 10px;
@@ -153,34 +188,30 @@ main {
   display: flex;
   align-items: center;
   /* animation: sidebardisappear .8s infinite; */
+  transition: all .2s ease-out;
 }
 
 .fs-media-cont-sidebar {
   position: fixed;
-  backdrop-filter: blur(2px) brightness(1.5);
+  backdrop-filter: blur(20px) brightness(1.5);
   width: 0;
   z-index: 1;
 }
 
-@keyframes sidebarappear {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 40px;
-  }
+.fs-media-cont-sidebar[data-state="showing"] {
+  width: var(--media-cont-left) !important;  
 }
-@keyframes sidebardisappear {
-  0% {
-    width: 40px;
-  }
-  100% {
-    width: 0;
-  }
+
+.fs-media-cont-sidebar[data-state="hidden"] {
+  width: 0 !important;
 }
+
+
 .media-cont-sidebar-list {
   list-style-type: none;
   width: 100%;
+  overflow: hidden;
+
   margin: 0;
   padding: 0;
   opacity: 1;
@@ -188,25 +219,10 @@ main {
 }
 
 .fs-media-cont-sidebar-list {
-  display: none;
+  /* display: none; */
 }
 
-@keyframes sidebarlistappear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes sidebarlistdisappear {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+
 .media-cont-sidebar-item {
   text-align: center;
   margin: 20px 0;
@@ -214,6 +230,8 @@ main {
 }
 
 .media-cont-sidebar-link {
+  background-color: transparent;
+  border: 0;
   cursor: pointer;
   font-size: 0.8rem;
   text-decoration: none;
@@ -232,11 +250,11 @@ main {
 }
 
 #startend-btn[data-disabled=false]:hover {
-  color: rgb(39, 140, 255);
+  /* color: rgb(39, 140, 255); */
 }
 
 #playpause-btn[data-disabled=false]:hover {
-  color: rgb(255, 255, 105);
+  /* color: rgb(255, 255, 105); */
 }
 
 #mic-btn[data-disabled=false]:hover {
@@ -263,9 +281,9 @@ main {
 #media-cont-sidebar-openning-btn {
   cursor: pointer;
   position: absolute;
-  right: -15px;
-  width: 10px;
-  height: 30px;
+  right: -20px;
+  width: 20px;
+  height: 60px;
   background-color: transparent;
   padding-right: 7px;
   border-radius: 0 10px 10px 0;
@@ -282,21 +300,17 @@ main {
 @keyframes appear {
   0% {
     opacity: 0;
-    display: none;
   }
   100% {
     opacity: 1;
-    display: block;
   }
 }
 @keyframes disappear {
   0% {
     opacity: 1;
-    display: block;
   }
   100% {
     opacity: 0;
-    display: none;
   }
 }
 #video {
@@ -367,10 +381,26 @@ main {
 .bottom-playback-btn {
   cursor: pointer;
   margin-right: 20px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.bottom-playback-btn:disabled {
+  opacity: .5;
+  cursor: default;
 }
 
 .bottom-playback-icon {
   width: 20px;
+  height: 20px;
+  color: #ddd;
 }
 
 #fs-btn {
@@ -378,7 +408,7 @@ main {
 }
 
 #fs-icon {
-  color: inherit;
+  /* color: inherit; */
 }
 
 /* HQ options */
@@ -553,18 +583,24 @@ main {
 }
 
 #premisssion-modal {
-  height: 300px;
+  max-width: 100%;
+  /* height: 300px; */
+  height: auto;
   padding: 10px;
   /* background-color: rgb(20, 20, 30); */
   border-radius: 10px;
 }
 
 #premission-title {
-  font-size: 0.9rem;
   color: white;
   font-size: 1.4rem;
   white-space: nowrap;
   text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: .9rem;
+    white-space: unset;
+  }
 }
 
 #premission-modal-divider {
@@ -580,6 +616,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    padding-inline: 0;
+  }
 }
 
 .premission-icon {
@@ -611,6 +652,7 @@ main {
   justify-content: center;
   width: 100px;
   height: 100px;
+  aspect-ratio: 1 / 1;
   background-color: transparent;
   color: rgba(205, 187, 255, 0.703);
   font-size: 1.2rem;
@@ -618,6 +660,9 @@ main {
   border: 1px solid white;
   cursor: pointer;
   transition: background-color 0.1s;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .premission-label:hover {
   background-color: rgba(255, 255, 255, 0.03);

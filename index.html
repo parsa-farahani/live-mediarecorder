@@ -26,19 +26,22 @@
                 <aside class="media-cont-sidebar" >
                     <ul class="media-cont-sidebar-list" >
                         <li class="media-cont-sidebar-item" >
-                            <div id="startend-btn" class="media-cont-sidebar-link" data-disabled="false" >
-                                <svg id="startend-icon" class="media-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6.343 4.938a1 1 0 0 1 0 1.415a8.003 8.003 0 0 0 0 11.317a1 1 0 1 1-1.414 1.414c-3.907-3.906-3.907-10.24 0-14.146a1 1 0 0 1 1.414 0m12.732 0c3.906 3.907 3.906 10.24 0 14.146a1 1 0 0 1-1.415-1.414a8.003 8.003 0 0 0 0-11.317a1 1 0 0 1 1.415-1.415M9.31 7.812a1 1 0 0 1 0 1.414a3.92 3.92 0 0 0 0 5.544a1 1 0 1 1-1.415 1.414a5.92 5.92 0 0 1 0-8.372a1 1 0 0 1 1.415 0m6.958 0a5.92 5.92 0 0 1 0 8.372a1 1 0 0 1-1.414-1.414a3.92 3.92 0 0 0 0-5.544a1 1 0 0 1 1.414-1.414m-4.186 2.77a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3"/></svg>
-                            </div>
+                            <button type="button" id="startend-btn" class="media-cont-sidebar-link" disabled data-disabled="false" data-activable>
+                                <svg id="startend-icon" class="media-icon inactive-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6.343 4.938a1 1 0 0 1 0 1.415a8.003 8.003 0 0 0 0 11.317a1 1 0 1 1-1.414 1.414c-3.907-3.906-3.907-10.24 0-14.146a1 1 0 0 1 1.414 0m12.732 0c3.906 3.907 3.906 10.24 0 14.146a1 1 0 0 1-1.415-1.414a8.003 8.003 0 0 0 0-11.317a1 1 0 0 1 1.415-1.415M9.31 7.812a1 1 0 0 1 0 1.414a3.92 3.92 0 0 0 0 5.544a1 1 0 1 1-1.415 1.414a5.92 5.92 0 0 1 0-8.372a1 1 0 0 1 1.415 0m6.958 0a5.92 5.92 0 0 1 0 8.372a1 1 0 0 1-1.414-1.414a3.92 3.92 0 0 0 0-5.544a1 1 0 0 1 1.414-1.414m-4.186 2.77a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3"/></svg>
+                                <svg class="media-icon active-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20"><path fill="currentColor" d="M2.854 2.146a.5.5 0 1 0-.708.708l1.811 1.81A8.22 8.22 0 0 0 2 10a8.23 8.23 0 0 0 2.604 6.015a.725.725 0 0 0 1.01-.025c.316-.316.277-.819-.027-1.11A6.73 6.73 0 0 1 3.5 10c0-1.62.57-3.107 1.522-4.27l.712.71A5.73 5.73 0 0 0 4.5 10c0 1.691.73 3.213 1.893 4.264a.713.713 0 0 0 .983-.037c.328-.328.267-.844-.041-1.134A4.24 4.24 0 0 1 6 10c0-.93.298-1.789.804-2.489l1.842 1.842a1.5 1.5 0 0 0 2 2l6.5 6.5a.5.5 0 0 0 .708-.707l-1.811-1.81l-1.065-1.065l-.712-.712l-1.07-1.07l-1.842-1.842l-2-2L7.4 6.693l-.942-.942l-.82-.82l-.944-.944zm13.794 12.38A8.2 8.2 0 0 0 18 10c0-2.283-.928-4.35-2.426-5.843a.726.726 0 0 0-1.027.01c-.31.31-.28.8.01 1.095A6.73 6.73 0 0 1 16.5 10a6.7 6.7 0 0 1-.94 3.438zm-1.822-1.822A5.7 5.7 0 0 0 15.5 10a5.73 5.73 0 0 0-1.706-4.087a.714.714 0 0 0-1.008.016c-.319.318-.272.816.014 1.111A4.24 4.24 0 0 1 14 10c0 .557-.107 1.09-.302 1.577z"/></svg>
+                            </button>
                         </li>
                         <li class="media-cont-sidebar-item" >
-                            <div id="mic-btn" class="media-cont-sidebar-link" data-disabled="true" >
-                                <svg id="mic-icon" class="media-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0V8a6 6 0 0 0-6-6M7 15a1 1 0 0 1 1 1a8 8 0 1 0 16 0a1 1 0 1 1 2 0c0 5.186-3.947 9.45-9.001 9.95L17 26v3a1 1 0 1 1-2 0v-3l.001-.05C9.947 25.45 6 21.187 6 16a1 1 0 0 1 1-1"/></svg>
-                            </div>
+                            <button type="button" id="mic-btn" class="media-cont-sidebar-link" disabled data-disabled="true" data-activable>
+                                <svg id="mic-icon" class="media-icon inactive-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="currentColor" d="M16 2a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0V8a6 6 0 0 0-6-6M7 15a1 1 0 0 1 1 1a8 8 0 1 0 16 0a1 1 0 1 1 2 0c0 5.186-3.947 9.45-9.001 9.95L17 26v3a1 1 0 1 1-2 0v-3l.001-.05C9.947 25.45 6 21.187 6 16a1 1 0 0 1 1-1"/></svg>
+                                <svg class="media-icon active-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M13 8c0 .564-.094 1.107-.266 1.613l-.814-.814A4 4 0 0 0 12 8V7a.5.5 0 0 1 1 0zm-5 4c.818 0 1.578-.245 2.212-.667l.718.719a5 5 0 0 1-2.43.923V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 1 0v1a4 4 0 0 0 4 4m3-9v4.879L5.158 2.037A3.001 3.001 0 0 1 11 3"/><path d="M9.486 10.607L5 6.12V8a3 3 0 0 0 4.486 2.607m-7.84-9.253l12 12l.708-.708l-12-12z"/></g></svg>                            
+                            </button>
                         </li>
                         <li class="media-cont-sidebar-item" >
-                            <div id="rec-btn" class="media-cont-sidebar-link" data-disabled="true" >
-                                <svg id="rec-icon" class="media-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><g fill="currentColor"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88"/><circle cx="128" cy="128" r="72"/></g></svg>
-                            </div>
+                            <button type="button" id="rec-btn" class="media-cont-sidebar-link" disabled data-disabled="true" data-activable>
+                                <svg id="rec-icon" class="media-icon inactive-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><g fill="currentColor"><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88"/><circle cx="128" cy="128" r="72"/></g></svg>
+                                <svg class="media-icon active-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3.5a8.5 8.5 0 1 0 0 17a8.5 8.5 0 0 0 0-17M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12m6-2.5A1.5 1.5 0 0 1 9.5 8h5A1.5 1.5 0 0 1 16 9.5v5a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 8 14.5z"/></svg>
+                            </button>
                         </li>
                         <li class="media-cont-sidebar-item" >
                             <a id="download-btn" class="media-cont-sidebar-link" data-disabled="true" >
@@ -59,10 +62,11 @@
                 <div class="bottom-cont-center" >
                     <progress id="progress" max="100" value="100" ></progress>
                     <div class="bottom-playback-controls">
-                        <div id="fs-btn" class="bottom-playback-btn">
-                            <svg id="fs-icon" class="media-icon bottom-playback-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M5 5h5V3H3v7h2zm5 14H5v-5H3v7h7zm11-5h-2v5h-5v2h7zm-2-4h2V3h-7v2h5z"/></svg>
-                        </div>
-                        <div id="hq-btn" class="bottom-playback-btn">
+                        <button type="button" id="fs-btn" class="bottom-playback-btn" data-activable>
+                            <svg id="fs-icon" class="media-icon bottom-playback-icon inactive-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M5 5h5V3H3v7h2zm5 14H5v-5H3v7h7zm11-5h-2v5h-5v2h7zm-2-4h2V3h-7v2h5z"/></svg>
+                            <svg class="media-icon bottom-playback-icon active-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20"><path fill="currentColor" d="M7 7V1H5v4H1v2zM5 19h2v-6H1v2h4zm10-4h4v-2h-6v6h2zm0-8h4V5h-4V1h-2v6z"/></svg>
+                        </button>
+                        <button type="button" id="hq-btn" class="bottom-playback-btn">
                             <svg id="hq-icon" class="media-icon bottom-playback-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M14.75 16.5h1.5V15H17q.425 0 .713-.288T18 14v-4q0-.425-.288-.712T17 9h-3q-.425 0-.712.288T13 10v4q0 .425.288.713T14 15h.75zM6 15h1.5v-2h2v2H11V9H9.5v2.5h-2V9H6zm8.5-1.5v-3h2v3zM4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20z"/></svg>
                             <div id="hq-options-cont" >
                                 <ul id="hq-options-list" >
@@ -80,16 +84,18 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                        <div id="mute-btn" class="bottom-playback-btn" >
-                            <svg id="mute-icon" class="media-icon bottom-playback-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M416 432L64 80"/><path fill="currentColor" d="M243.33 98.86a23.89 23.89 0 0 0-25.55 1.82l-.66.51l-28.52 23.35a8 8 0 0 0-.59 11.85l54.33 54.33a8 8 0 0 0 13.66-5.66v-64.49a24.51 24.51 0 0 0-12.67-21.71m8 236.43L96.69 180.69A16 16 0 0 0 85.38 176H56a24 24 0 0 0-24 24v112a24 24 0 0 0 24 24h69.76l92 75.31a23.9 23.9 0 0 0 25.87 1.69A24.51 24.51 0 0 0 256 391.45v-44.86a16 16 0 0 0-4.67-11.3M352 256c0-24.56-5.81-47.87-17.75-71.27a16 16 0 1 0-28.5 14.55C315.34 218.06 320 236.62 320 256q0 4-.31 8.13a8 8 0 0 0 2.32 6.25l14.36 14.36a8 8 0 0 0 13.55-4.31A146 146 0 0 0 352 256m64 0c0-51.18-13.08-83.89-34.18-120.06a16 16 0 0 0-27.64 16.12C373.07 184.44 384 211.83 384 256c0 23.83-3.29 42.88-9.37 60.65a8 8 0 0 0 1.9 8.26L389 337.4a8 8 0 0 0 13.13-2.79C411 311.76 416 287.26 416 256"/><path fill="currentColor" d="M480 256c0-74.25-20.19-121.11-50.51-168.61a16 16 0 1 0-27 17.22C429.82 147.38 448 189.5 448 256c0 46.19-8.43 80.27-22.43 110.53a8 8 0 0 0 1.59 9l11.92 11.92a8 8 0 0 0 12.92-2.16C471.6 344.9 480 305 480 256"/></svg>
+                        </button>
+                        <button type="button" id="mute-btn" class="bottom-playback-btn" data-activable>
+                            <svg id="mute-icon" class="media-icon bottom-playback-icon inactive-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor" fill-rule="evenodd" stroke-width="1.5" clip-rule="evenodd"><path d="M16.97 6.97a.75.75 0 0 1 1.06 0l-.53.53l.53-.53h.001l.001.002l.003.002l.007.007l.02.02l.062.069c.05.057.12.138.201.241A6.87 6.87 0 0 1 19.75 11.5a6.87 6.87 0 0 1-1.425 4.189a5 5 0 0 1-.264.31l-.02.02l-.006.007l-.003.002v.001h-.001l-.51-.508l.51.51a.75.75 0 1 1-1.061-1.061l.53.53l-.53-.53h-.001v.001l-.002.001l.005-.005l.033-.036q.048-.052.139-.167a5.37 5.37 0 0 0 .448-5.843a5 5 0 0 0-.448-.685a3 3 0 0 0-.172-.203l-.005-.005a.75.75 0 0 1 .003-1.058"/><path d="M19.97 3.97a.75.75 0 0 1 1.06 0l-.53.53l.53-.53h.001l.002.002l.003.003l.009.01a2 2 0 0 1 .124.134c.079.089.188.218.316.385c.257.333.594.823.929 1.46c.67 1.274 1.336 3.143 1.336 5.536s-.666 4.262-1.336 5.537a10 10 0 0 1-.929 1.46a7 7 0 0 1-.44.518l-.01.01l-.002.003l-.002.001l-.531-.529l.53.53a.75.75 0 0 1-1.061-1.06v.001h-.001l.001-.001l.014-.014l.063-.07q.089-.098.25-.304c.212-.276.5-.693.79-1.244c.58-1.1 1.164-2.731 1.164-4.838s-.584-3.738-1.164-4.838a8.7 8.7 0 0 0-.79-1.244a6 6 0 0 0-.313-.374l-.014-.014l-.001-.002v.002h.001a.75.75 0 0 1 0-1.06m-7.932-.574c1.163-.767 2.713.068 2.713 1.461v14.286c0 1.394-1.55 2.228-2.713 1.461l-6-3.955a.25.25 0 0 0-.137-.042H3a2.75 2.75 0 0 1-2.75-2.75v-3.714A2.75 2.75 0 0 1 3 7.393h2.9a.25.25 0 0 0 .138-.041z"/></g></svg>
+                            <svg class="media-icon bottom-playback-icon active-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M17.47 9.47a.75.75 0 0 1 1.06 0L20 10.94l1.47-1.47a.75.75 0 0 1 1.06 1.06L21.061 12l1.47 1.47a.75.75 0 0 1-1.061 1.06L20 13.06l-1.47 1.47a.75.75 0 0 1-1.06-1.06L18.94 12l-1.47-1.47a.75.75 0 0 1 0-1.06m-4.433-6.074c1.163-.767 2.713.068 2.713 1.461v14.286c0 1.394-1.55 2.228-2.713 1.461l-6-3.955a.25.25 0 0 0-.137-.042H4a2.75 2.75 0 0 1-2.75-2.75v-3.714A2.75 2.75 0 0 1 4 7.393h2.9a.25.25 0 0 0 .138-.041z" clip-rule="evenodd"/></svg>
                             <div class="video-volume-range-cont" >
                                 <input type="range" name="video-volume" id="video-volume-range" min="0" value="1" step=".1" >
                             </div>
-                        </div>
-                        <div id="playpause-btn" class="media-cont-sidebar-link" data-disabled="true">
-                            <svg id="playpause-icon" class="media-icon bottom-playback-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6c0-1.886 0-2.828.586-3.414C3.172 2 4.114 2 6 2c1.886 0 2.828 0 3.414.586C10 3.172 10 4.114 10 6v12c0 1.886 0 2.828-.586 3.414C8.828 22 7.886 22 6 22c-1.886 0-2.828 0-3.414-.586C2 20.828 2 19.886 2 18zm12 0c0-1.886 0-2.828.586-3.414C15.172 2 16.114 2 18 2c1.886 0 2.828 0 3.414.586C22 3.172 22 4.114 22 6v12c0 1.886 0 2.828-.586 3.414C20.828 22 19.886 22 18 22c-1.886 0-2.828 0-3.414-.586C14 20.828 14 19.886 14 18z"/></svg>
-                        </div>
+                        </button>
+                        <button type="button" id="playpause-btn" class="bottom-playback-btn" disabled="true" data-disabled="true" data-activable>
+                            <svg id="playpause-icon" class="media-icon bottom-playback-icon inactive-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6c0-1.886 0-2.828.586-3.414C3.172 2 4.114 2 6 2c1.886 0 2.828 0 3.414.586C10 3.172 10 4.114 10 6v12c0 1.886 0 2.828-.586 3.414C8.828 22 7.886 22 6 22c-1.886 0-2.828 0-3.414-.586C2 20.828 2 19.886 2 18zm12 0c0-1.886 0-2.828.586-3.414C15.172 2 16.114 2 18 2c1.886 0 2.828 0 3.414.586C22 3.172 22 4.114 22 6v12c0 1.886 0 2.828-.586 3.414C20.828 22 19.886 22 18 22c-1.886 0-2.828 0-3.414-.586C14 20.828 14 19.886 14 18z"/></svg>
+                            <svg class="media-icon bottom-playback-icon active-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M240 128a15.74 15.74 0 0 1-7.6 13.51L88.32 229.65a16 16 0 0 1-16.2.3A15.86 15.86 0 0 1 64 216.13V39.87a15.86 15.86 0 0 1 8.12-13.82a16 16 0 0 1 16.2.3l144.08 88.14A15.74 15.74 0 0 1 240 128"/></svg>
+                        </button>
                     </div>
                     <span id="video-time" >00:00:00</span>
                 </div>

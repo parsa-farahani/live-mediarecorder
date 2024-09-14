@@ -1,3 +1,4 @@
+// Elements
 const videoContainer = document.querySelector(".media-cont");
 const video = document.querySelector("#video");
 const audio = document.querySelector("#audio");
@@ -20,6 +21,7 @@ const volRange = document.getElementById("video-volume-range");
 const videoTime = document.getElementById("video-time");
 const liveIcon = document.getElementById("live-icon");
 
+// init setup
 let STREAM = null;
 
 let VIDEOENABLED = false;
@@ -32,12 +34,19 @@ let micOn = false;
 video.controls = false;
 
 volRange.setAttribute("max", 1);
+startendBtn.disabled = false;
+if ( JSON.parse(localStorage.getItem('mic')) ) {
+    micBtn.classList.add('active');
+} else {
+    micBtn.classList.remove('active');
+}
 
+// functionality
 const getUserMediaReady = !!(window.navigator.mediaDevices && window.navigator.mediaDevices.getUserMedia);
 
 if (getUserMediaReady) {
-
     async function askUserPremissions() {
+        document.documentElement.style.overflow = 'hidden';
         return new Promise((resolve, reject) => {
             const premissionModalCont = document.getElementById("premission-modal-cont");
             const camCheck = document.getElementById("webcam-premission-check");
@@ -91,14 +100,14 @@ if (getUserMediaReady) {
         .then((userPremissions) => {
             if (userPremissions.mic) {
                 micOn = true;
-                micBtn.classList.add("mic-btn-active");
+                micBtn.classList.add("active");
             }
     
             premissions.cam = userPremissions.cam;
             premissions.mic = userPremissions.mic;
 
-            window.localStorage.setItem("cam", premissions.cam);
-            window.localStorage.setItem("mic", premissions.mic);
+            localStorage.setItem("cam", premissions.cam);
+            localStorage.setItem("mic", premissions.mic);
         })
         .catch(error => console.log(error));
     }
@@ -134,19 +143,26 @@ if (getUserMediaReady) {
 
     function updateStyle() {
         if (!!streaming) {
+            playpauseBtn.disabled = false;
             playpauseBtn.setAttribute("data-disabled", false);
+            recBtn.disabled = false;
             recBtn.setAttribute("data-disabled", false);
+            micBtn.disabled = false;
             micBtn.setAttribute("data-disabled", false);
             liveIcon.classList.add("live-icon-active");
         } else {
+            playpauseBtn.disabled = true;
             playpauseBtn.setAttribute("data-disabled", true);
+            recBtn.disabled = true;
             recBtn.setAttribute("data-disabled", true);
+            micBtn.disabled = true;
             micBtn.setAttribute("data-disabled", true);
             liveIcon.classList.remove("live-icon-active");
         }
     }
 
     startendBtn.addEventListener("click", function(e) {
+        console.log('a')
         if (!streaming && video.srcObject === null) {
             startStream();
         } else {
@@ -230,6 +246,7 @@ function enableRecord() {
     })
 
     recorder.addEventListener("stop", function(e) {
+        downloadBtn.disabled = false;
         downloadBtn.setAttribute("data-disabled", false);
     })
 
@@ -288,10 +305,11 @@ fsBtn.addEventListener("click", function(e) {
 })
 
 document.addEventListener("fullscreenchange", function(e) {
-    if (!!document.fullscreenElement) {
+    if (document.fullscreenElement) {
         video.classList.add("fs-video");
         controlsSidebar.classList.add("fs-media-cont-sidebar");
         controlsSidebarList.classList.add("fs-media-cont-sidebar-list");
+        controlsSidebar.style.width = "0px";
         controlsSidebarOpenBtn.style.display = "block";
         controlsSidebarOpenBtn.style.animation = "appear .3s forwards";
     } else {
@@ -299,7 +317,7 @@ document.addEventListener("fullscreenchange", function(e) {
         controlsSidebarList.style.animation = "";
         video.classList.remove("fs-video");
         controlsSidebar.classList.remove("fs-media-cont-sidebar");
-        controlsSidebar.style.width = "var(--media-cont-left) !important";
+        controlsSidebar.style.width = "var(--media-cont-left)";
         controlsSidebarList.style.width = "100%";
         controlsSidebarList.classList.remove("fs-media-cont-sidebar-list");
         controlsSidebarOpenBtn.style.animation = "disappear .3s forwards";
@@ -326,26 +344,25 @@ function muteIconChange() {
     }
 }
 
-controlsSidebarOpenBtn.addEventListener("mouseenter", function(e) {
+controlsSidebarOpenBtn.addEventListener('click',  e => {
     if (!document.fullscreenElement) return;
-    controlsSidebar.style.animation = "sidebarappear .8s forwards";
-    controlsSidebarList.style.display = "block";
-    controlsSidebarList.style.animation = "sidebarlistappear .3s forwards";
+    if ( controlsSidebar.dataset.state === 'showing' ) {
+        controlsSidebar.setAttribute('data-state', 'hidden');
+    } else {
+        controlsSidebar.setAttribute('data-state', 'showing');
+    }
 })
 
 
-controlsSidebar.addEventListener("mouseleave", function(e) {
-    console.log("leave");
-    if (!document.fullscreenElement) return;
-    setTimeout(() => {
-        controlsSidebarList.style.animation = "sidebarlistdisappear .3s forwards";
-        controlsSidebar.style.animation = "sidebardisappear .8s forwards";
-    }, 3000);
+/* change activable icons (mute/unmute, ...) */
+document.addEventListener('click', e => {
+    const { target } = e;
+    if ( !target.closest('[data-activable]') ) return;
+    const elem = target.closest('[data-activable]');
+    elem.classList.toggle('active');
 })
-
 
 /* Quality Change */
-
 hqBtn.addEventListener("click", function(e) {
     if (!streaming) return;
     qualityOptionsCont.style.display = "block";
