@@ -35,6 +35,7 @@ The **Live Media Recorder App** allows users to stream video from their webcam a
 - **Gulp**: Used to compile Sass into CSS.
 
 ### APIs
+- **HTMLMediaElement API**: Used for controlling video/audio elements (play, pause, mute, ...)
 - **MediaDevices API**: Utilized via `getUserMedia()` to access the user's webcam and microphone.
 - **MediaRecorder API**: Used for recording media streams.
 
