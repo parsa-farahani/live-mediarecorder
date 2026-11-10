@@ -1,7 +1,7 @@
 # Live Media Recorder App
 
 ## Preview
-[![Live Media Recorder App Preview](assets/screenshots/sc-1.png)](https://your-live-demo-url.com)
+[![Live Media Recorder App Preview](assets/screenshots/sc-1.png)](https://parsa-farahani.github.io/live-mediarecorder-deployment/)
 
 ## Overview
 The **Live Media Recorder App** allows users to stream video from their webcam and audio from their microphone, record the streams, and download the recorded files. The app is designed to provide a seamless user experience by managing permissions and offering various controls for media playback.
